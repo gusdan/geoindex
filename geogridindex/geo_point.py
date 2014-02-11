@@ -11,14 +11,17 @@ class GeoPoint(object):
     """
     Simple geo point implementation.
     """
-    __slots__ = ('latitude', 'longitude', '_rad_latitude', '_rad_longitude')
+    __slots__ = (
+        'latitude', 'longitude', '_rad_latitude', '_rad_longitude', 'ref')
 
-    def __init__(self, latitude, longitude):
+    def __init__(self, latitude, longitude, ref=None):
         """
         Init geo point with latitude and longitude.
+        ref can be used for reference to some associated data
         """
         self.latitude = latitude
         self.longitude = longitude
+        self.ref = ref
 
         self._rad_latitude = None
         self._rad_longitude = None

@@ -1,6 +1,6 @@
 from itertools import chain
 import geohash
-from . import utils
+from . import utils, GeoPoint
 
 # dependence between hashtag's precision and distance accurate calculating
 # in fact it's sizes of grids in km
@@ -43,6 +43,8 @@ class GeoGridIndex(object):
         :param point:
         :return:
         """
+        assert isinstance(point, GeoPoint), \
+            'point should be GeoPoint instance'
         point_hash = self.get_point_hash(point)
         try:
             points = self.data[point_hash]
@@ -83,10 +85,12 @@ class GeoGridIndex(object):
     def get_nearest_points(self, center_point, radius, unit='km'):
         """
         return list of geo points from circle with given center and radius
-        :param center_point: center of search circle
+        :param center_point: GeoPoint with center of search circle
         :param radius: radius of search circle
         :return: generator with tuple with GeoPoints and distance
         """
+        assert isinstance(center_point, GeoPoint), \
+            'point should be GeoPoint instance'
         for point in self.get_nearest_points_dirty(center_point, radius):
             distance = point.distance_to(center_point, unit)
             if distance <= radius:
