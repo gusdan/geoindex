@@ -2,13 +2,13 @@
 GeoIndex
 ========
 
-Simple library for perform quick nearby search in a bunch of geospatial points
+Simple library for perform quick nearby search for geo spatial data.
 
 Installation
 ------------
 
 
-    pip install geoindex or
+    pip install geoindex
 
 
 Simple use
@@ -49,6 +49,8 @@ and use it after::
 Performance
 -----------
 
+Creating index with 10000 random points and nearby search for each point took
+about 400ms. See tests/test_performance.py for more details.
 
 
 How does it work
