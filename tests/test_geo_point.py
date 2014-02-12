@@ -1,8 +1,8 @@
 import math
 
 from unittest import TestCase
-from pygeoindex import GeoPoint
-from pygeoindex.utils import km_to_mi, mi_to_km
+from geogridindex import GeoPoint
+from geogridindex.utils import km_to_mi, mi_to_km
 
 TEST_POINTS = (
     (50.44268, 30.51774),
