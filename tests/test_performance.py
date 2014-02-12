@@ -6,7 +6,7 @@ import sys
 if __name__ == '__main__':
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from geogridindex import GeoGridIndex, GeoPoint
+from geoindex import GeoGridIndex, GeoPoint
 
 
 def get_random_point():

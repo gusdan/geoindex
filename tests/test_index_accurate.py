@@ -2,7 +2,7 @@ from functools import partial
 from operator import itemgetter
 from unittest import TestCase
 from nose.tools import eq_
-from geogridindex import GeoGridIndex, GeoPoint
+from geoindex import GeoGridIndex, GeoPoint
 
 
 class TestIndexAccurate(TestCase):
