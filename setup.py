@@ -19,8 +19,7 @@ setup(
         'geoindex',
     ],
     install_requires=[
-        'eventlet>=0.13.0',
-        'ujson>=1.33'
+        'python-geohash>=0.8.4',
     ],
     platforms='any',
     classifiers=[
