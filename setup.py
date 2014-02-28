@@ -11,8 +11,8 @@ setup(
                  'for geo spatial data.'),
     long_description=open('README.rst').read(),
     author='Danil Gusev',
-    author_email='dgusev@getgoing.com',
-    url='http://github.com/getgoing/geoindex',
+    author_email='gusev.danil@gmail.com',
+    url='http://github.com/gusdan/geoindex',
     packages=[
         'geoindex',
     ],
