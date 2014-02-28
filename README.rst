@@ -4,11 +4,23 @@ GeoIndex
 
 Simple library for perform quick nearby search for geo spatial data.
 
+Requirements
+------------
+
+* python-geohash
+
+It was written and tested on Python 2.7.
+
 Installation
 ------------
 
+Get it from `pypi <http://pypi.python.org/pypi/geoindex>`_::
 
     pip install geoindex
+
+or `github <http://github.com/gusdan/geoindex>`_::
+
+    pip install -e git://github.com/gusdan/geoindex.git#egg=geoindex
 
 
 Simple use
