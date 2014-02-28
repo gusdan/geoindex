@@ -27,7 +27,6 @@ class GeoGridIndex(object):
         """
         self.precision = precision
         self.data = {}
-        self.data_is_shelve = False
 
     def get_point_hash(self, point):
         """
@@ -46,15 +45,8 @@ class GeoGridIndex(object):
         assert isinstance(point, GeoPoint), \
             'point should be GeoPoint instance'
         point_hash = self.get_point_hash(point)
-        try:
-            points = self.data[point_hash]
-            need_update = False
-        except KeyError:
-            points = []
-            need_update = True
+        points = self.data.setdefault(point_hash, [])
         points.append(point)
-        if need_update or self.data_is_shelve:
-            self.data[point_hash] = points
 
     def get_nearest_points_dirty(self, center_point, radius, unit='km'):
         """
@@ -75,7 +67,7 @@ class GeoGridIndex(object):
                 if radius > max_size / 2:
                     suggested_precision = precision - 1
                     break
-            raise Exception(
+            raise ValueError(
                 'Too large radius, please rebuild GeoHashGrid with '
                 'precision={0}'.format(suggested_precision)
             )
