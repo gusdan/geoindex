@@ -1,18 +1,16 @@
 #!/usr/bin/env python
 
 from setuptools import setup
+import geoindex
 
-
-README = open('README.rst').read()
-VERSION = '0.1'
 
 setup(
     name='geoindex',
-    version=VERSION,
+    version=geoindex.__version__,
     description=('Simple library for perform quick nearby search '
                  'for geo spatial data.'),
-    long_description=README,
-    author='Danil Gusev, Igor Davydenko',
+    long_description=open('README.rst').read(),
+    author='Danil Gusev',
     author_email='dgusev@getgoing.com',
     url='http://github.com/getgoing/geoindex',
     packages=[
