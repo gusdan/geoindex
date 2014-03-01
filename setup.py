@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 
 from setuptools import setup
-import geoindex
 
 
 setup(
     name='geoindex',
-    version=geoindex.__version__,
+    version='0.0.1',
     description=('Simple library for perform quick nearby search '
                  'for geo spatial data.'),
     long_description=open('README.rst').read(),
